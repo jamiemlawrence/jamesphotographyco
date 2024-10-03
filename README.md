@@ -1,2 +1,0 @@
-# jamesphotographyco
-Portfolio Website

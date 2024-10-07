@@ -32,6 +32,15 @@ header {
     padding-left: 20px;
 }
 
+.name-title a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the current text color */
+}
+
+.name-title a:hover {
+    color: #FFCFB3;
+}
+
 h1 {
     margin: 0;
     font-weight: 900;
@@ -73,6 +82,10 @@ nav a {
     font-weight: 600;
 }
 
+nav a:hover {
+    color: #FFCFB3;
+}
+
 nav a.active {
     text-decoration: underline;
     text-underline-offset: 5px;
@@ -102,7 +115,8 @@ nav a.active {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
     gap: 5px;
-    max-width: 900px;
+    width: 75%;
+    max-width: 750px;
     margin: 0 auto;
     padding: 5px 5px;
     box-sizing: border-box;
@@ -112,16 +126,16 @@ nav a.active {
 .portfolio-item {
     position: relative;
     width: 100%;
-    height: 200px; /* Fixed height for all items */
+    height: 250px; /* Fixed height for all items */
     overflow: hidden;
 }
 
 .portfolio-item:nth-child(1) {
-    grid-column: span 2; /* Make the 4th item span across 2 columns */
+    grid-column: span 2; /* Make the 1st item span across 2 columns */
 }
 
 .portfolio-item:nth-child(2) {
-    grid-column: span 1; /* Make sure the 5th item only spans 1 column */
+    grid-column: span 1; /* Make sure the 2nd item only spans 1 column */
 }
 
 .portfolio-item img {
@@ -231,14 +245,15 @@ nav a.active {
 }
 
 .contact-section img {
-    max-width: 45%; 
-    border-radius: 8px;
+    max-width: 45%;
+    max-height: 500px;
+    border-radius: 0px;
 }
 
 .contact-form {
-    max-width: 50%; 
+    max-width: 25%; 
     padding: 20px;
-    padding-right: 35px;
+    padding-right: 10px;
     border: 1px solid #FFF5CD;
     border-radius: 8px; 
 }
@@ -261,6 +276,19 @@ input {
     opacity: 50%;
 }
 
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #FFCFB3;
+    border-radius: 4px;
+    background-color: #FFCFB3;
+    opacity: 50%;
+    height: 100px; /* Set the initial height for the textarea */
+    resize: vertical; /* Allows users to resize vertically */
+    font-family: 'Inter', sans-serif; 
+}
+
 button {
     background-color: #E78F81; 
     color: #fff; 
@@ -275,12 +303,14 @@ button:hover {
     background-color: #FFCFB3; 
 }
 
-input::placeholder {
+input::placeholder, 
+textarea::placeholder {
     color: black; 
     opacity: 50%;
 }
 
-input:focus::placeholder {
+input:focus::placeholder, 
+textarea:focus::placeholder{
     color: transparent; 
 }
 

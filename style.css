@@ -38,6 +38,10 @@ h1 {
     color: #E78F81; 
 }
 
+.jamesLight {
+    font-weight: 400;
+}
+
 h2 {
     margin: 0px 0;
     color: #FFCFB3; 
@@ -92,6 +96,85 @@ nav a.active {
     font-size: 1.5rem;
     text-align: center;
 }
+
+/* Home page grid layout */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
+    gap: 5px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    background-color: #FFF5CD;
+}
+
+.portfolio-item {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Fixed height for all items */
+    overflow: hidden;
+}
+
+.portfolio-item:nth-child(1) {
+    grid-column: span 2; /* Make the 4th item span across 2 columns */
+}
+
+.portfolio-item:nth-child(2) {
+    grid-column: span 1; /* Make sure the 5th item only spans 1 column */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.03);
+}
+
+.title-overlay {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    color: white;
+    font-size: 18px;
+    padding: 2px 2px;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-shadow: 1px 0 1px gray;
+}
+
+.title-overlay img {
+    width: 20px; /* Adjust the width of the Instagram logo */
+    height: 20px; /* Adjust the height of the Instagram logo */
+    object-fit: contain; /* Make sure the logo doesn't stretch */
+}
+
+.portfolio-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 500px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+        gap: 5px; /* Adjust gap between items */
+        padding: 10px; /* Adjust padding for smaller screens */
+        grid-auto-flow: row; /* Ensure items flow row by row */
+    }
+
+    .portfolio-item {
+        grid-column: span 1; /* Make sure each item takes up a full row */
+        height: 200px; /* Height remains the same */
+    }
+}
+/* End of home page grid layout */
 
 .video-section {
     margin: 30px;

@@ -1,7 +1,7 @@
 // script.js
 
 document.addEventListener("DOMContentLoaded", function() {
-    var currentUrl = window.location.href; // Get the current full URL
+    var currentUrl = window.location.href; 
     var navLinks = document.querySelectorAll("nav a");
 
     // Remove 'active' class from all links

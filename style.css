@@ -191,14 +191,36 @@ nav a.active {
 /* End of home page grid layout */
 
 .video-section {
-    margin: 30px;
-    margin-top: 10px;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (optional, if needed) */
+    width: 100%;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 1000px; /* Set a max width */
+    width: 80%; /* Makes it responsive */
+    margin: 0 auto; /* Ensures centering */
+    background: #FFF5CD;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 @media screen and (min-width: 1000px) {
     .video-section {
         max-width: 1000px;
-        align-items: center;
+        margin: 0 auto;
     }
 }
 
@@ -211,11 +233,11 @@ nav a.active {
 }
 
 .photo-section img {
-    transition: transform 0.1s ease-in; 
+    transition: transform 0.4s ease-out; 
 }
 
 .photo-section img:hover {
-    transform: scale(1.05); 
+    transform: scale(1.03); 
 }
 
 @media screen and (min-width: 1300px) {
